@@ -1,0 +1,24 @@
+# Netlify Configuration for Next.js LinkVault App
+
+[build]
+  # Build command - builds the Next.js app
+  command = "npm run build"
+
+[build.environment]
+  # Node version - use Node 20 for better compatibility
+  NODE_VERSION = "20"
+  
+  # Disable Next.js telemetry
+  NEXT_TELEMETRY_DISABLED = "1"
+  
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Plugin to enable Next.js on Netlify
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
