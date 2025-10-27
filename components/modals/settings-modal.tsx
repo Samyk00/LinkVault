@@ -72,14 +72,14 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
         title: "Exported",
         description: "Saved",
         variant: "success",
-        icon: <Download className="h-4 w-4" />,
+        icon: <Download className="size-4" />,
       });
     } catch (error) {
       toast({
         title: "Export failed",
         description: "Try again",
         variant: "destructive",
-        icon: <Download className="h-4 w-4" />,
+        icon: <Download className="size-4" />,
       });
     }
   };
@@ -107,7 +107,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
             title: "Imported",
             description: "Restored",
             variant: "success",
-            icon: <Upload className="h-4 w-4" />,
+            icon: <Upload className="size-4" />,
           });
           onClose();
         } else {
@@ -118,7 +118,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
           title: "Import failed",
           description: "Invalid file",
           variant: "destructive",
-          icon: <Upload className="h-4 w-4" />,
+          icon: <Upload className="size-4" />,
         });
       }
     };
@@ -210,7 +210,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
               <CardContent>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Button onClick={handleExport} className="gap-2">
-                    <Download className="h-4 w-4" />
+                    <Download className="size-4" />
                     Export
                   </Button>
                   <Button
@@ -218,7 +218,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                     variant="outline"
                     className="gap-2"
                   >
-                    <Upload className="h-4 w-4" />
+                    <Upload className="size-4" />
                     Import
                   </Button>
                 </div>
@@ -245,7 +245,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                   variant="destructive"
                   className="w-full gap-2"
                 >
-                  <Trash2 className="h-4 w-4" />
+                  <Trash2 className="size-4" />
                   Clear All Data
                 </Button>
               </CardContent>

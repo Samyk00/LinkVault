@@ -80,7 +80,7 @@ export function BulkActionBar({
       title: shouldFavorite ? "Favorited" : "Unfavorited",
       description: `(${selectedIds.length})`,
       variant: "info",
-      icon: <Star className={`h-4 w-4 ${shouldFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />,
+      icon: <Star className={`size-4 ${shouldFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />,
     });
   };
 
@@ -120,7 +120,7 @@ export function BulkActionBar({
             Undo
           </Button>
         ),
-        icon: <Trash2 className="h-4 w-4" />,
+        icon: <Trash2 className="size-4" />,
       });
 
       onClearSelection();
@@ -129,7 +129,7 @@ export function BulkActionBar({
         title: "Error",
         description: "Try again",
         variant: "destructive",
-        icon: <Trash2 className="h-4 w-4" />,
+        icon: <Trash2 className="size-4" />,
       });
     } finally {
       setIsDeleting(false);
@@ -151,7 +151,7 @@ export function BulkActionBar({
       title: "Restored",
       description: `(${deletedIds.length})`,
       variant: "success",
-      icon: <Folder className="h-4 w-4" />,
+      icon: <Folder className="size-4" />,
     });
   };
 
@@ -164,7 +164,7 @@ export function BulkActionBar({
         title: "Moved",
         description: `(${movedCount})`,
         variant: "success",
-        icon: <Folder className="h-4 w-4" />,
+        icon: <Folder className="size-4" />,
       });
       onClearSelection();
     }
@@ -182,10 +182,10 @@ export function BulkActionBar({
           variant="ghost"
           size="icon"
           onClick={onClearSelection}
-          className="h-8 w-8 flex-shrink-0"
+          className="size-8 flex-shrink-0"
           aria-label="Clear selection"
         >
-          <X className="h-4 w-4" />
+          <X className="size-4" />
         </Button>
 
         {/* Selection Count */}
@@ -212,13 +212,13 @@ export function BulkActionBar({
             variant="ghost"
             size="icon"
             onClick={handleSelectAll}
-            className="h-8 w-8"
+            className="size-8"
             aria-label="Select all visible items"
           >
             {allSelected ? (
-              <CheckSquare className="h-4 w-4" />
+              <CheckSquare className="size-4" />
             ) : (
-              <Square className="h-4 w-4" />
+              <Square className="size-4" />
             )}
           </Button>
         </div>
@@ -235,7 +235,7 @@ export function BulkActionBar({
             onClick={() => setShowMoveModal(true)}
             className="gap-1 px-2 h-8"
           >
-            <Folder className="h-4 w-4" />
+            <Folder className="size-4" />
             <span className="hidden lg:inline text-xs">Move</span>
           </Button>
 
@@ -246,7 +246,7 @@ export function BulkActionBar({
             onClick={handleBulkFavorite}
             className="gap-1 px-2 h-8"
           >
-            <Star className={`h-4 w-4 ${selectedLinks.some(link => link.isFavorite) ? 'fill-yellow-400 text-yellow-400' : ''}`} />
+            <Star className={`size-4 ${selectedLinks.some(link => link.isFavorite) ? 'fill-yellow-400 text-yellow-400' : ''}`} />
             <span className="hidden lg:inline text-xs">Favorite</span>
           </Button>
 
@@ -258,7 +258,7 @@ export function BulkActionBar({
             disabled={isDeleting}
             className="gap-1 px-2 h-8 text-destructive hover:text-destructive"
           >
-            <Trash2 className="h-4 w-4" />
+            <Trash2 className="size-4" />
             <span className="hidden lg:inline text-xs">Delete</span>
           </Button>
         </div>

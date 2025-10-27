@@ -139,8 +139,7 @@ export function FolderTreeItem({
             size="icon"
             className="h-4 w-4 flex-shrink-0 p-0 hover:bg-transparent"
             onClick={handleToggle}
-            aria-label={isExpanded ? "Collapse folder" : "Expand folder"}
-            aria-expanded={isExpanded}
+            aria-label={isExpanded ? "Collapse folder" :size-4 flex-shrink-0 p-0 hover:bg-transparentsExpanded}
           >
             {isExpanded ? (
               <ChevronDown className="h-3 w-3" />
@@ -149,14 +148,14 @@ export function FolderTreeItem({
             )}
           </Button>
         ) : (
-          // Spacer for alignment when no children
-          <div className="h-4 w-4 flex-shrink-0" />
+          // Spsize-3r alignment when no children
+          <div className="h-4 w-4 fsize-3ink-0" />
         )}
 
         {/* Folder Button */}
         <button
           onClick={handleSelect}
-          className={`flex items-center gap-1.5 flex-1 min-w-0 py-0.5 px-1.5 rounded transition-colors hover:bg-accent/50 ${fontSize}`}
+          className={`flex items-cesize-4 flex-shrink-0in-w-0 py-0.5 px-1.5 rounded transition-colors hover:bg-accent/50 ${fontSize}`}
           aria-label={`Select ${folder.name} folder`}
           aria-pressed={isSelected}
         >
@@ -170,7 +169,7 @@ export function FolderTreeItem({
           )}
 
           {/* Folder Name */}
-          <span className="truncate text-xs font-medium">{folder.name}</span>
+size-3.5 flex-shrink-0="truncate text-xs font-medium">{folder.name}</span>
 
           {/* Sub-folder count badge (if has children) */}
           {hasChildren && subFolderCount > 0 && (

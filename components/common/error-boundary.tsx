@@ -55,8 +55,8 @@ export class ErrorBoundary extends React.Component<
       return (
         <div className="flex min-h-screen flex-col items-center justify-center p-4">
           <div className="text-center space-y-4 max-w-md">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-destructive/10">
-              <AlertCircle className="h-8 w-8 text-destructive" />
+            <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-destructive/10">
+              <AlertCircle className="size-8 text-destructive" />
             </div>
             <h1 className="text-2xl font-bold">Something went wrong</h1>
             <p className="text-muted-foreground">

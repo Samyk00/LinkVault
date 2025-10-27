@@ -24,19 +24,19 @@ export function ViewToggle() {
       <Button
         variant={viewMode === "grid" ? "secondary" : "ghost"}
         size="icon"
-        className="h-7 w-7"
+        className="size-7"
         onClick={() => updateSettings({ viewMode: "grid" })}
       >
-        <LayoutGrid className="h-4 w-4" />
+        <LayoutGrid className="size-4" />
         <span className="sr-only">Grid view</span>
       </Button>
       <Button
         variant={viewMode === "list" ? "secondary" : "ghost"}
         size="icon"
-        className="h-7 w-7"
+        className="size-7"
         onClick={() => updateSettings({ viewMode: "list" })}
       >
-        <List className="h-4 w-4" />
+        <List className="size-4" />
         <span className="sr-only">List view</span>
       </Button>
     </div>
