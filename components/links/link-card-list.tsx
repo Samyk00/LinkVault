@@ -69,6 +69,14 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
     onToggleSelect?.(link.id);
   };
 
+  /**
+  * Handles toggling the favorite status of a link and displays a toast notification in one line
+  * @example
+  * handleToggleFavorite(e)
+  * // Nothing is returned
+  * @param {React.MouseEvent} e - Mouse event triggered by the user.
+  * @returns {void} No return value.
+  **/
   const handleToggleFavorite = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -97,6 +105,14 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
     setAddLinkModalOpen(true);
   };
 
+  /**
+  * Deletes the specified link and shows a toast notification with an undo option.
+  * @example
+  * deleteLinkHandler(link)
+  * // Displays a toast and removes the link; returns nothing.
+  * @param {{Object}} {{link}} - Link object containing at least an `id` property.
+  * @returns {{void}} No return value.
+  **/
   const handleDelete = () => {
     const linkId = link.id;
     deleteLink(linkId);

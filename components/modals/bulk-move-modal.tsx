@@ -41,6 +41,18 @@ interface FolderTreeItemProps {
   showCheckIcon?: boolean;
 }
 
+/**
+* Renders a modal that allows users to move multiple selected links into a chosen folder and handles the move logic.
+* @example
+* BulkMoveModal({ isOpen: true, onClose: () => {}, selectedIds: ['abc', 'def'], onComplete: (count) => console.log(`Moved ${count} items`) })
+* <BulkMoveModal /> JSX element
+* @param {Object} props - Props object for BulkMoveModal.
+* @param {boolean} props.isOpen - Flag indicating whether the modal is open.
+* @param {Function} props.onClose - Callback invoked when the modal is closed.
+* @param {string[]} props.selectedIds - Array of link IDs selected for moving.
+* @param {Function} props.onComplete - Callback invoked after the move completes, receiving the number of items moved.
+* @returns {JSX.Element} A React component that displays the bulk move modal.
+**/
 export function BulkMoveModal({
   isOpen,
   onClose,

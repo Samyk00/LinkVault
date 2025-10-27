@@ -63,6 +63,14 @@ export function FolderBadge({ folderId, onClick, className = "" }: FolderBadgePr
   const folderIconConfig = FOLDER_ICONS.find((icon) => icon.name === folder.icon);
   const IconComponent = folderIconConfig?.icon || FolderIcon;
 
+  /**
+  * Handles a folder badge click, preventing default behavior and delegating action.
+  * @example
+  * handleFolderBadgeClick(event)
+  * // Navigates to the clicked folder or calls custom onClick
+  * @param {React.MouseEvent} event - The click event associated with the folder badge.
+  * @returns {void} No return value; performs navigation or custom callback.
+  **/
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation(); // Don't trigger card click

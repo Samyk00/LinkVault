@@ -53,6 +53,14 @@ const DialogContent = React.forwardRef<
 ))
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
+/**
+* Renders a dialog header container with spacing and alignment utilities.
+* @example
+* DialogHeader({ className: "custom-class" })
+* <div class="flex flex-col space-y-1.5 text-center sm:text-left custom-class"></div>
+* @param {React.HTMLAttributes<HTMLDivElement>} props - Additional div attributes and optional className.
+* @returns {JSX.Element} A styled div element to be used as a dialog header.
+**/
 const DialogHeader = ({
   className,
   ...props
@@ -67,6 +75,14 @@ const DialogHeader = ({
 )
 DialogHeader.displayName = "DialogHeader"
 
+/**
+* Renders a flexible footer section for a dialog component in one line
+* @example
+* DialogFooter({ className: "mt-4", children: <Button>Save</Button> })
+* // <div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4">...</div>
+* @param {React.HTMLAttributes<HTMLDivElement>} props - Additional div attributes including optional className in one line.
+* @returns {JSX.Element} The rendered dialog footer element in one line.
+**/
 const DialogFooter = ({
   className,
   ...props

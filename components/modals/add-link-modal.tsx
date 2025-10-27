@@ -40,6 +40,14 @@ const linkSchema = z.object({
 
 type LinkFormData = z.infer<typeof linkSchema>;
 
+/**
+* Modal component that allows users to add a new link or edit an existing one.
+* @example
+* AddLinkModal()
+* // Renders a dialog with a form for entering a URL, fetching its metadata, and saving it.
+* @param {void} None - This component does not accept any props.
+* @returns {JSX.Element} A dialog element containing the link form UI.
+**/
 export function AddLinkModal() {
   const isOpen = useStore((state) => state.isAddLinkModalOpen);
   const setIsOpen = useStore((state) => state.setAddLinkModalOpen);
@@ -150,6 +158,14 @@ export function AddLinkModal() {
     return () => clearTimeout(timeoutId);
   }, [urlValue, setValue, isEditMode]);
 
+  /**
+  * Adds a new link or updates an existing one using the provided form data, then shows a toast and closes the modal.
+  * @example
+  * saveLink({ url: "https://example.com", title: "Example", description: "Sample site", folderId: "abc123" })
+  * // Displays a success toast and closes the modal
+  * @param {LinkFormData} data - Object containing link details such as URL, title, description, and folder ID.
+  * @returns {void} No return value.
+  **/
   const onSubmit = (data: LinkFormData) => {
     try {
       const platform = detectPlatform(data.url);

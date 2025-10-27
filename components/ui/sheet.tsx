@@ -74,6 +74,14 @@ const SheetContent = React.forwardRef<
 ))
 SheetContent.displayName = SheetPrimitive.Content.displayName
 
+/**
+* Renders a flex-column div with optional custom class names and any additional HTML div attributes.  
+* @example  
+* functionName({ className: "my-custom-class", id: "uniqueId" })  
+* <div id="uniqueId" class="flex flex-col space-y-2 text-center sm:text-left my-custom-class"></div>  
+* @param {React.HTMLAttributes<HTMLDivElement>} props - Object containing an optional `className` and any valid HTML div attributes.  
+* @returns {JSX.Element} A JSX `<div>` element with merged class names and supplied attributes.  
+**/
 const SheetHeader = ({
   className,
   ...props
@@ -88,6 +96,15 @@ const SheetHeader = ({
 )
 SheetHeader.displayName = "SheetHeader"
 
+/**
+* Renders the footer section of a Sheet component.
+* @example
+* SheetFooter("mt-4", { children: <Button>Save</Button> })
+* <div class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4">...</div>
+* @param {string} className - Optional additional CSS class names to append.
+* @param {React.HTMLAttributes<HTMLDivElement>} props - Additional HTML attributes passed to the underlying div element.
+* @returns {JSX.Element} A div element that serves as the footer container for Sheet actions.
+**/
 const SheetFooter = ({
   className,
   ...props
