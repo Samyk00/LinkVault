@@ -35,6 +35,13 @@ const folderSchema = z.object({
 
 type FolderFormData = z.infer<typeof folderSchema>;
 
+/**
+* Renders a modal dialog that allows users to create, edit, and validate folders (or sub-folders) with customizable icons.
+* @example
+* <CreateFolderModal />
+* Renders the modal for creating or editing a folder and returns the corresponding JSX element.
+* @returns {JSX.Element} The rendered create/edit folder modal component.
+**/
 export function CreateFolderModal() {
   const isOpen = useStore((state) => state.isCreateFolderModalOpen);
   const setIsOpen = useStore((state) => state.setCreateFolderModalOpen);
@@ -93,6 +100,14 @@ export function CreateFolderModal() {
     }
   }, [isOpen, editingFolder, reset]);
 
+  /**
+  * Validates folder form input, then creates a new folder or updates an existing one while displaying toast notifications.
+  * @example
+  * handleFolderFormSubmit({ name: "Projects", iconName: "briefcase" })
+  * // Folder created/updated and success toast displayed
+  * @param {{FolderFormData}} {{data}} - Folder form data containing name, iconName and other fields.
+  * @returns {{void}} Returns nothing.
+  **/
   const onSubmit = (data: FolderFormData) => {
     try {
       // Validate: Cannot create sub-folder inside a sub-folder

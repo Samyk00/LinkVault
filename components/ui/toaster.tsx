@@ -10,6 +10,13 @@ import {
   ToastViewport,
 } from "@/components/ui/toast"
 
+/**
+* Renders a toast notification provider along with all active toasts.
+* @example
+* Toaster()
+* <ToastProvider>…</ToastProvider>
+* @returns {{JSX.Element}} The rendered toaster component.
+**/
 export function Toaster() {
   const { toasts } = useToast()
 

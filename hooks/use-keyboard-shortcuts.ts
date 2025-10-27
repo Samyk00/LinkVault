@@ -16,8 +16,26 @@ interface KeyboardShortcut {
   callback: () => void;
 }
 
+/**
+* React hook that binds multiple keyboard shortcuts to their respective callback functions.
+* @example
+* useKeyboardShortcuts([
+*   { key: 's', ctrlKey: true, shiftKey: false, altKey: false, callback: () => console.log('Save') }
+* ])
+* // Pressing Ctrl+S will log 'Save' to the console
+* @param {{KeyboardShortcut[]}} shortcuts - Array of shortcut objects describing key combinations and callbacks.
+* @returns {{void}} Returns nothing.
+**/
 export function useKeyboardShortcuts(shortcuts: KeyboardShortcut[]) {
   useEffect(() => {
+    /**
+    * Handles registered keyboard shortcuts and executes their callbacks.
+    * @example
+    * handleKeyboardShortcuts(event)
+    * // Executes the callback bound to the matching shortcut and prevents default browser behavior
+    * @param {KeyboardEvent} event - Keyboard event captured from a keydown listener.
+    * @returns {void} Function does not return anything.
+    **/
     const handleKeyDown = (event: KeyboardEvent) => {
       // Skip if event.key is not available (e.g., during paste events)
       if (!event.key) return;

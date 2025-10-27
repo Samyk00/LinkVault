@@ -30,6 +30,14 @@ interface SettingsModalProps {
   onClose: () => void;
 }
 
+/**
+* React component that renders a modal for managing LinkVault settings, backup, restore, and data deletion.
+* @example
+* SettingsModal({ isOpen: true, onClose: () => console.log('closed') })
+* <SettingsModal isOpen={true} onClose={() => console.log('closed')} />
+* @param {SettingsModalProps} props - Props object containing modal visibility flag and close handler.
+* @returns {JSX.Element} JSX element representing the rendered settings modal.
+**/
 export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
   const links = useStore((state) => state.links);
   const folders = useStore((state) => state.folders);
@@ -40,6 +48,13 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   const [showClearConfirm, setShowClearConfirm] = useState(false);
 
+  /**
+  * Exports application data as a JSON file, triggers its download, and displays a toast notification indicating success or failure.
+  * @example
+  * functionName()
+  * // Initiates a JSON download named "linkvault-backup-YYYY-MM-DD.json" and shows a toast.
+  * @returns {void} No return value.
+  **/
   const handleExport = () => {
     try {
       const data = exportData();
@@ -69,6 +84,14 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
     }
   };
 
+  /**
+  * Imports data from a selected JSON file and displays success or error notifications.
+  * @example
+  * handleFileImport(event)
+  * undefined
+  * @param {React.ChangeEvent<HTMLInputElement>} event - File input change event containing the selected file.
+  * @returns {void} No return value.
+  **/
   const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;

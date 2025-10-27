@@ -25,6 +25,18 @@ interface BulkDeleteModalProps {
   isDeleting?: boolean;
 }
 
+/**
+* Renders a confirmation modal allowing users to bulk-delete selected items.
+* @example
+* BulkDeleteModal({ isOpen: true, onClose: closeModal, selectedCount: 5, onConfirm: deleteItems })
+* <Dialog> … </Dialog>
+* @param {boolean} isOpen - Flag that controls the visibility of the modal.
+* @param {Function} onClose - Callback executed when the modal should close.
+* @param {number} selectedCount - Number of items currently selected for deletion.
+* @param {Function} onConfirm - Callback executed to confirm and perform deletion.
+* @param {boolean} [isDeleting=false] - Indicates whether the deletion process is in progress.
+* @returns {JSX.Element} A React element that renders the bulk-delete confirmation modal.
+**/
 export function BulkDeleteModal({
   isOpen,
   onClose,

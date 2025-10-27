@@ -36,6 +36,20 @@ export class ErrorBoundary extends React.Component<
     console.error('Error caught by boundary:', error, errorInfo);
   }
 
+  /**
+  * React error boundary that catches JavaScript errors anywhere in its child component tree and renders a graceful fallback UI instead of crashing the whole application.
+  * @component
+  * @example
+  *   <ErrorBoundary>
+  *     <App />
+  *   </ErrorBoundary>
+  * @prop {React.ReactNode} children - Child elements that the boundary should wrap and monitor for errors.
+  * @state {boolean} hasError - Flag that becomes true when an error is caught.
+  * @state {Error|null} error - Stores the actual Error object for optional display in the fallback UI.
+  * @lifecycle getDerivedStateFromError - Static method that sets hasError to true when an error is encountered.
+  * @lifecycle componentDidCatch - Lifecycle method that captures the error and stores it in state.
+  * @render Displays a themed fallback interface with error details and recovery actions (page refresh or retry) when hasError is true; otherwise renders this.props.children.
+  **/
   render() {
     if (this.state.hasError) {
       return (

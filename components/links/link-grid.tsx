@@ -30,6 +30,13 @@ interface LinkGridProps {
 }
 
 // Skeleton component that matches LinkCard layout
+/**
+* Renders a skeleton placeholder for a link card while its actual content is loading.
+* @example
+* LinkCardSkeleton()
+* // <div className="rounded-lg border bg-card overflow-hidden">…</div>
+* @returns {JSX.Element} Skeleton placeholder component for a link card.
+**/
 function LinkCardSkeleton() {
   return (
     <div className="rounded-lg border bg-card overflow-hidden">
@@ -50,6 +57,19 @@ function LinkCardSkeleton() {
   );
 }
 
+/**
+* Renders a responsive, lazy-loaded grid or list of link cards with selection and trash-view support.
+* @example
+* LinkGrid({ links: fetchedLinks, isLoading: false, selectedIds: ['abc'], onToggleSelect: handleToggle })
+* // Renders the initial batch of links and loads more items as you scroll
+* @param {Link[]} links - Array of link objects to display.
+* @param {boolean} [isLoading=false] - Displays skeleton placeholders while data is loading.
+* @param {boolean} [isInTrash=false] - Indicates the component is shown inside the trash section.
+* @param {string[]} [selectedIds=[]] - List of currently selected link IDs.
+* @param {(id: string) => void} onToggleSelect - Callback invoked when a link’s selection state is toggled.
+* @param {boolean} [isSelectionModeActive=false] - Enables selection mode UI when set to true.
+* @returns {JSX.Element} React element containing the rendered link grid or list.
+**/
 export function LinkGrid({ links, isLoading = false, isInTrash = false, selectedIds = [], onToggleSelect, isSelectionModeActive = false }: LinkGridProps) {
   const setAddLinkModalOpen = useStore((state) => state.setAddLinkModalOpen);
   const settings = useStore((state) => state.settings);
