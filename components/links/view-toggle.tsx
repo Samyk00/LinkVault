@@ -37,22 +37,22 @@ export function ViewToggle() {
       <Button
         variant={isGridView ? 'secondary' : 'ghost'}
         size="icon"
-        className="h-8 w-8"
+        className="size-8"
         onClick={() => handleToggle('grid')}
         aria-label="Grid view"
         aria-pressed={isGridView}
       >
-        <LayoutGrid className="h-4 w-4" />
+        <LayoutGrid className="size-4" />
       </Button>
       <Button
         variant={!isGridView ? 'secondary' : 'ghost'}
         size="icon"
-        className="h-8 w-8"
+        className="size-8"
         onClick={() => handleToggle('list')}
         aria-label="List view"
         aria-pressed={!isGridView}
       >
-        <List className="h-4 w-4" />
+        <List className="size-4" />
       </Button>
     </div>
   );

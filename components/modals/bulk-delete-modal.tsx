@@ -54,8 +54,8 @@ export function BulkDeleteModal({
       <DialogContent className="sm:max-w-[400px]">
         <DialogHeader>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-destructive/10">
-              <Trash2 className="h-5 w-5 text-destructive" />
+            <div className="flex size-10 items-center justify-center rounded-full bg-destructive/10">
+              <Trash2 className="size-5 text-destructive" />
             </div>
             <div>
               <DialogTitle>Delete Selected Items</DialogTitle>

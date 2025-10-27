@@ -86,7 +86,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
       title: wasFavorite ? "Unfavorited" : "Favorited",
       description: "(1)",
       variant: "info",
-      icon: <Star className={`h-4 w-4 ${!wasFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />,
+      icon: <Star className={`size-4 ${!wasFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />,
     });
   };
 
@@ -96,7 +96,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
       title: "Copied",
       description: "URL",
       variant: "default",
-      icon: <Copy className="h-4 w-4" />,
+      icon: <Copy className="size-4" />,
     });
   };
 
@@ -120,7 +120,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
       title: "Deleted",
       description: "(1)",
       variant: "destructive",
-      icon: <Trash2 className="h-4 w-4" />,
+      icon: <Trash2 className="size-4" />,
       action: (
         <Button
           variant="outline"
@@ -140,7 +140,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
       title: "Restored",
       description: "(1)",
       variant: "success",
-      icon: <RotateCcw className="h-4 w-4" />,
+      icon: <RotateCcw className="size-4" />,
     });
   };
 
@@ -157,7 +157,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
       title: "Deleted permanently",
       description: "(1)",
       variant: "destructive",
-      icon: <XCircle className="h-4 w-4" />,
+      icon: <XCircle className="size-4" />,
     });
   };
 
@@ -170,7 +170,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
       title: "Restored",
       description: "(1)",
       variant: "success",
-      icon: <RotateCcw className="h-4 w-4" />,
+      icon: <RotateCcw className="size-4" />,
     });
   };
 
@@ -196,7 +196,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
             />
           ) : (
             <div className="flex h-full items-center justify-center">
-              <PlatformIcon className="h-8 w-8 text-muted-foreground" />
+              <PlatformIcon className="size-8 text-muted-foreground" />
             </div>
           )}
         </div>
@@ -220,7 +220,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
                 style={{ color: platformConfig.color }}
                 title={platformConfig.name}
               >
-                <PlatformIcon className="h-3 w-3 md:h-3.5 md:w-3.5" />
+                <PlatformIcon className="size-3 md:size-3.5" />
               </div>
               <span className="text-xs text-muted-foreground hidden sm:inline">{platformConfig.name}</span>
             </div>
@@ -245,12 +245,12 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
             <Button
               variant="ghost"
               size="icon"
-              className="h-6 w-6"
+              className="size-6"
               onClick={handleToggleFavorite}
               aria-label={link.isFavorite ? "Remove from favorites" : "Add to favorites"}
             >
               <Star
-                className={`h-3.5 w-3.5 transition-colors ${
+                className={`size-3.5 transition-colors ${
                   link.isFavorite ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground hover:text-yellow-400'
                 }`}
               />
@@ -261,7 +261,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
           <Button
             variant="ghost"
             size="icon"
-            className="hidden md:flex h-6 w-6 opacity-0 group-hover:opacity-100 transition-opacity"
+            className="hidden md:flex size-6 opacity-0 group-hover:opacity-100 transition-opacity"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -269,7 +269,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
             }}
             aria-label="Copy link"
           >
-            <Copy className="h-3.5 w-3.5 text-muted-foreground hover:text-foreground" />
+            <Copy className="size-3.5 text-muted-foreground hover:text-foreground" />
           </Button>
 
           {/* More Actions Menu */}
@@ -278,13 +278,13 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-8 w-8"
+                className="size-8"
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                 }}
               >
-                <MoreVertical className="h-4 w-4" />
+                <MoreVertical className="size-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" onClick={(e) => e.stopPropagation()}>
@@ -296,7 +296,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
                       handleRestore();
                     }}
                   >
-                    <RotateCcw className="mr-2 h-4 w-4" />
+                    <RotateCcw className="mr-2 size-4" />
                     Restore
                   </DropdownMenuItem>
                   <DropdownMenuItem 
@@ -306,7 +306,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
                       handlePermanentDelete();
                     }}
                   >
-                    <XCircle className="mr-2 h-4 w-4" />
+                    <XCircle className="mr-2 size-4" />
                     Delete Forever
                   </DropdownMenuItem>
                 </>
@@ -318,7 +318,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
                       handleSelect();
                     }}
                   >
-                    <CheckSquare className="mr-2 h-4 w-4" />
+                    <CheckSquare className="mr-2 size-4" />
                     Select
                   </DropdownMenuItem>
                   {/* Star - Mobile only */}
@@ -329,7 +329,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
                       handleToggleFavorite(e as any);
                     }}
                   >
-                    <Star className={`mr-2 h-4 w-4 ${
+                    <Star className={`mr-2 size-4 ${
                       link.isFavorite ? 'fill-yellow-400 text-yellow-400' : ''
                     }`} />
                     {link.isFavorite ? 'Unfavorite' : 'Favorite'}
@@ -341,7 +341,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
                       handleCopyLink();
                     }}
                   >
-                    <Copy className="mr-2 h-4 w-4" />
+                    <Copy className="mr-2 size-4" />
                     Copy
                   </DropdownMenuItem>
                   <DropdownMenuItem 
@@ -350,7 +350,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
                       handleEdit();
                     }}
                   >
-                    <Edit className="mr-2 h-4 w-4" />
+                    <Edit className="mr-2 size-4" />
                     Edit
                   </DropdownMenuItem>
                   <DropdownMenuItem
@@ -360,7 +360,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
                       handleDelete();
                     }}
                   >
-                    <Trash2 className="mr-2 h-4 w-4" />
+                    <Trash2 className="mr-2 size-4" />
                     Trash
                   </DropdownMenuItem>
                 </>

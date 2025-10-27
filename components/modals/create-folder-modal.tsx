@@ -118,7 +118,7 @@ export function CreateFolderModal() {
             title: "Cannot create sub-folder",
             description: "Under parent only",
             variant: "destructive",
-            icon: <AlertCircle className="h-4 w-4" />,
+            icon: <AlertCircle className="size-4" />,
           });
           return;
         }
@@ -130,7 +130,7 @@ export function CreateFolderModal() {
             title: "Maximum sub-folders reached",
             description: `Limit ${MAX_SUB_FOLDERS_PER_FOLDER}`,
             variant: "destructive",
-            icon: <AlertCircle className="h-4 w-4" />,
+            icon: <AlertCircle className="size-4" />,
           });
           return;
         }
@@ -151,7 +151,7 @@ export function CreateFolderModal() {
           title: "Updated",
           description: "Saved",
           variant: "success",
-          icon: <Folder className="h-4 w-4" />,
+          icon: <Folder className="size-4" />,
         });
       } else {
         // Create new folder or sub-folder
@@ -168,7 +168,7 @@ export function CreateFolderModal() {
           title: "Created",
           description: "Saved",
           variant: "success",
-          icon: isSubFolder ? <FolderPlus className="h-4 w-4" /> : <Folder className="h-4 w-4" />,
+          icon: isSubFolder ? <FolderPlus className="size-4" /> : <Folder className="size-4" />,
         });
       }
 
@@ -178,7 +178,7 @@ export function CreateFolderModal() {
         title: "Error",
         description: "Try again",
         variant: "destructive",
-        icon: <AlertCircle className="h-4 w-4" />,
+        icon: <AlertCircle className="size-4" />,
       });
     }
   };
@@ -208,7 +208,7 @@ export function CreateFolderModal() {
           {/* Warning: Sub-folder limit reached */}
           {hasReachedLimit && (
             <div className="flex items-start gap-2 rounded-md border border-destructive/50 bg-destructive/10 p-3">
-              <AlertCircle className="h-4 w-4 text-destructive flex-shrink-0 mt-0.5" />
+              <AlertCircle className="size-4 text-destructive flex-shrink-0 mt-0.5" />
               <div className="flex-1 text-sm">
                 <p className="font-medium text-destructive">Maximum sub-folders reached</p>
                 <p className="text-xs text-destructive/80 mt-1">
@@ -259,7 +259,7 @@ export function CreateFolderModal() {
                     title={iconOption.name}
                   >
                     <IconComponent 
-                      className="h-4 w-4" 
+                      className="size-4" 
                       style={{ color: iconOption.color }}
                     />
                   </button>
@@ -275,7 +275,7 @@ export function CreateFolderModal() {
             <Button type="submit" disabled={isSubmitting || hasReachedLimit}>
               {isSubmitting ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  <Loader2 className="mr-2 size-4 animate-spin" />
                   {isEditMode ? 'Updating...' : 'Creating...'}
                 </>
               ) : (

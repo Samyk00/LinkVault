@@ -100,7 +100,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
       title: wasFavorite ? "Unfavorited" : "Favorited",
       description: "(1)",
       variant: "info",
-      icon: <Star className={`h-4 w-4 ${!wasFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />,
+      icon: <Star className={`size-4 ${!wasFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />,
     });
   };
 
@@ -115,7 +115,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
       title: "Deleted",
       description: "(1)",
       variant: "destructive",
-      icon: <Trash className="h-4 w-4" />,
+      icon: <Trash className="size-4" />,
       action: (
         <Button
           variant="outline"
@@ -139,7 +139,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
       title: "Restored",
       description: "(1)",
       variant: "success",
-      icon: <RotateCcw className="h-4 w-4" />,
+      icon: <RotateCcw className="size-4" />,
     });
   };
 
@@ -153,7 +153,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
       title: "Copied",
       description: "URL",
       variant: "default",
-      icon: <Copy className="h-4 w-4" />,
+      icon: <Copy className="size-4" />,
     });
   };
 
@@ -174,7 +174,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
       title: "Restored",
       description: "(1)",
       variant: "success",
-      icon: <RotateCcw className="h-4 w-4" />,
+      icon: <RotateCcw className="size-4" />,
     });
   };
 
@@ -216,7 +216,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
       title: "Deleted permanently",
       description: "(1)",
       variant: "destructive",
-      icon: <Trash className="h-4 w-4" />,
+      icon: <Trash className="size-4" />,
     });
   };
 
@@ -235,10 +235,10 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
             <Button 
               variant="ghost" 
               size="icon" 
-              className="h-8 w-8 rounded-full bg-background/90 backdrop-blur-sm hover:bg-background opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+              className="size-8 rounded-full bg-background/90 backdrop-blur-sm hover:bg-background opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
               aria-label="Link options"
             >
-              <MoreVertical className="h-4 w-4" />
+              <MoreVertical className="size-4" />
               <span className="sr-only">Open menu</span>
             </Button>
           </DropdownMenuTrigger>
@@ -246,7 +246,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
             {isInTrash ? (
               <>
                 <DropdownMenuItem onClick={handleRestore}>
-                  <RotateCcw className="mr-2 h-4 w-4" />
+                  <RotateCcw className="mr-2 size-4" />
                   Restore
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
@@ -254,26 +254,26 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
                   onClick={handlePermanentDelete}
                   className="text-destructive focus:text-destructive"
                 >
-                  <Trash className="mr-2 h-4 w-4" />
+                  <Trash className="mr-2 size-4" />
                   Delete Permanently
                 </DropdownMenuItem>
               </>
             ) : (
               <>
                 <DropdownMenuItem onClick={handleSelect}>
-                  <CheckSquare className="mr-2 h-4 w-4" />
+                  <CheckSquare className="mr-2 size-4" />
                   Select
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleEdit}>
-                  <Edit className="mr-2 h-4 w-4" />
+                  <Edit className="mr-2 size-4" />
                   Edit
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleCopyLink} className="md:hidden">
-                  <Copy className="mr-2 h-4 w-4" />
+                  <Copy className="mr-2 size-4" />
                   Copy
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleToggleFavorite} className="md:hidden">
-                  <Star className={`mr-2 h-4 w-4 ${link.isFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />
+                  <Star className={`mr-2 size-4 ${link.isFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />
                   {link.isFavorite ? 'Unfavorite' : 'Favorite'}
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
@@ -281,7 +281,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
                   onClick={handleDelete}
                   className="text-destructive focus:text-destructive"
                 >
-                  <Trash className="mr-2 h-4 w-4" />
+                  <Trash className="mr-2 size-4" />
                   Trash
                 </DropdownMenuItem>
               </>
@@ -304,7 +304,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
           />
         ) : (
           <div className="flex h-full items-center justify-center">
-            <PlatformIcon className="h-12 w-12 text-muted-foreground" />
+            <PlatformIcon className="size-12 text-muted-foreground" />
           </div>
         )}
         
@@ -316,12 +316,12 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8 bg-background/80 backdrop-blur-sm hover:bg-background/90 transition-colors duration-200"
+              className="size-8 bg-background/80 backdrop-blur-sm hover:bg-background/90 transition-colors duration-200"
               onClick={handleToggleFavorite}
               aria-label={link.isFavorite ? "Remove from favorites" : "Add to favorites"}
             >
               <Star
-                className={`h-4 w-4 transition-colors duration-200 ${
+                className={`size-4 transition-colors duration-200 ${
                   link.isFavorite ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground hover:text-yellow-400'
                 }`}
               />
@@ -350,7 +350,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
         <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground">
           <div className="flex items-center gap-1.5 min-w-0">
             <PlatformIcon
-              className="h-3.5 w-3.5 flex-shrink-0"
+              className="size-3.5 flex-shrink-0"
               style={{ color: platformConfig.color }}
             />
             <span className="truncate capitalize">{link.platform}</span>

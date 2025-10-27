@@ -154,7 +154,7 @@ export function BulkMoveModal({
         title: "Error",
         description: "Try again",
         variant: "destructive",
-        icon: <AlertCircle className="h-4 w-4" />,
+        icon: <AlertCircle className="size-4" />,
       });
     } finally {
       setIsMoving(false);
@@ -187,7 +187,7 @@ export function BulkMoveModal({
         <div className="flex flex-col flex-1 min-h-0">
           {/* Search */}
           <div className="relative mb-4">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               placeholder="Search folders..."
               value={searchQuery}
@@ -200,7 +200,7 @@ export function BulkMoveModal({
           <div className="flex-1 overflow-y-auto border rounded-md p-2 custom-scrollbar">
             {rootFolders.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-32 text-center">
-                <FolderPlus className="h-8 w-8 text-muted-foreground mb-2" />
+                <FolderPlus className="size-8 text-muted-foreground mb-2" />
                 <p className="text-sm text-muted-foreground">
                   {searchQuery ? "No folders found" : "No folders available"}
                 </p>
@@ -211,11 +211,11 @@ export function BulkMoveModal({
                 <button
                   type="button"
                   onClick={() => setSelectedFolderId(null)}
-                  className={`w-full text-left px-2 py-2 text-sm rounded hover:bg-accent transition-colors flex items-center gap-2 ${
+                  className={`w-full text-left p-2 text-sm rounded hover:bg-accent transition-colors flex items-center gap-2 ${
                     selectedFolderId === null ? 'bg-accent' : ''
                   }`}
                 >
-                  {selectedFolderId === null && <Check className="h-4 w-4" />}
+                  {selectedFolderId === null && <Check className="size-4" />}
                   <span className="text-muted-foreground italic">None (remove from folders)</span>
                 </button>
 

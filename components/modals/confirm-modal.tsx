@@ -68,7 +68,7 @@ export function ConfirmModal({
         <DialogHeader>
           <div className="flex items-center gap-2">
             {variant === "destructive" && (
-              <AlertTriangle className="h-5 w-5 text-destructive" />
+              <AlertTriangle className="size-5 text-destructive" />
             )}
             <DialogTitle>{title}</DialogTitle>
           </div>

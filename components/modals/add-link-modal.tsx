@@ -186,7 +186,7 @@ export function AddLinkModal() {
           title: "Updated",
           description: "Saved",
           variant: "success",
-          icon: <Link2 className="h-4 w-4" />,
+          icon: <Link2 className="size-4" />,
         });
       } else {
         // Add new link
@@ -204,7 +204,7 @@ export function AddLinkModal() {
           title: "Added",
           description: "Saved",
           variant: "success",
-          icon: <Link2 className="h-4 w-4" />,
+          icon: <Link2 className="size-4" />,
         });
       }
 
@@ -245,13 +245,13 @@ export function AddLinkModal() {
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <Label htmlFor="url" className="text-sm flex items-center gap-1.5">
-                  <Link2 className="h-3.5 w-3.5 text-muted-foreground" />
+                  <Link2 className="size-3.5 text-muted-foreground" />
                   URL
                 </Label>
                 {/* Loading indicator for metadata fetch */}
                 {isFetchingMetadata && (
                   <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <Loader2 className="h-3 w-3 animate-spin" />
+                    <Loader2 className="size-3 animate-spin" />
                     <span>Getting link details</span>
                   </div>
                 )}
@@ -275,7 +275,7 @@ export function AddLinkModal() {
             {/* Title Input */}
             <div className="space-y-1.5">
               <Label htmlFor="title" className="text-sm flex items-center gap-1.5">
-                <Heading className="h-3.5 w-3.5 text-muted-foreground" />
+                <Heading className="size-3.5 text-muted-foreground" />
                 Title
               </Label>
               <Input
@@ -292,7 +292,7 @@ export function AddLinkModal() {
             {/* Description Input */}
             <div className="space-y-1.5">
               <Label htmlFor="description" className="text-sm flex items-center gap-1.5">
-                <FileText className="h-3.5 w-3.5 text-muted-foreground" />
+                <FileText className="size-3.5 text-muted-foreground" />
                 Description
               </Label>
               <Textarea
@@ -328,7 +328,7 @@ export function AddLinkModal() {
             <Button type="submit" disabled={isSubmitting || isFetchingMetadata} className="h-9">
               {isSubmitting ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  <Loader2 className="mr-2 size-4 animate-spin" />
                   {isEditMode ? 'Updating...' : 'Saving...'}
                 </>
               ) : (

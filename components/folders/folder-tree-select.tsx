@@ -131,22 +131,16 @@ export function FolderTreeSelect({
           {isOpen ? (
             <ChevronUp className="h-3.5 w-3.5 opacity-50 flex-shrink-0 ml-2" />
           ) : (
-            <ChevronDown className="h-3.5 w-3.5 opacity-50 flex-shrink-0 ml-2" />
-          )}
-        </button>
+            <ChevronDown className="h-3.5 w-3.5 opacity-50 flex-shrinsize-3.5 opacity-50 flex-shrink-0 ml-2n>
 
-        {/* Dropdown Content - Opens seamlessly above button */}
-        {isOpen && (
-          <div className="absolute bottom-full left-0 right-0 z-50 animate-in slide-in-from-bottom-2 fade-in duration-200">
-            <div className="rounded-t-md border border-b-0 bg-popover shadow-md">
-              <div className="max-h-[180px] overflow-y-auto overflow-x-hidden py-1 custom-scrollbar animate-in fade-in duration-150 delay-75">
+        {/* Dropdown Content - Opens seamlessly above bsize-3.5 opacity-50 flex-shrink-0 ml-2<div className="absolute bottom-full left-0 right-0 z-50 animate-in slide-in-from-bottom-2 fade-in duration-200">
+            <div className="rounded-t-md absolute bottom-full inset-x-0 z-50 animate-in slide-in-from-bottom-2 fade-in duration-200-auto overflow-x-hidden py-1 custom-scrollbar animate-in fade-in duration-150 delay-75">
                 {rootFolders.length === 0 ? (
                   <div className="flex flex-col items-center justify-center h-24 text-center px-2">
                     <FolderPlus className="h-5 w-5 text-muted-foreground mb-1.5" />
                     <p className="text-xs text-muted-foreground">
                       No folders yet
-                    </p>
-                  </div>
+size-5 text-muted-foreground mb-1.5       </div>
                 ) : (
                   <>
                     {/* None option */}

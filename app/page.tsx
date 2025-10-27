@@ -187,9 +187,7 @@ export default function Home() {
                       <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                       <Input
                         type="search"
-                        placeholder="Search..."
-                        value={searchFilters.query}
-                        onChange={handleSearchChange}
+                        placeholder="Search.absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground          onChange={handleSearchChange}
                         className="pl-10 h-9 text-sm"
                       />
                     </div>
