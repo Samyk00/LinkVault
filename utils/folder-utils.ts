@@ -33,6 +33,11 @@ export function getAllDescendantFolderIds(
   const descendants: string[] = [folderId];
   const visited = new Set<string>([folderId]); // Prevent infinite loops
   
+  /**
+   * Recursively gets all children of a parent folder.
+   * Prevents circular references by tracking visited nodes.
+   * @param parentId - Parent folder ID to get children for
+   */
   const getChildren = (parentId: string) => {
     const children = folders.filter(f => f.parentId === parentId);
     

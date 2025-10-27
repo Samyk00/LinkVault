@@ -95,7 +95,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
     toast({
       title: "Copied",
       description: "URL",
-      variant: "default",
+      variant: "info",
       icon: <Copy className="h-4 w-4" />,
     });
   };

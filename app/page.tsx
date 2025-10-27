@@ -23,6 +23,12 @@ import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import { useSpecificFolderDescendants } from "@/hooks/use-folder-descendants";
 import { DEBOUNCE_DELAY } from "@/constants";
 
+/**
+ * Home page component - main application view.
+ * Displays links in grid/list view with search, filtering, and bulk actions.
+ * Supports folder navigation, favorites, and trash views.
+ * @returns {JSX.Element} Home page component
+ */
 export default function Home() {
   const links = useStore((state) => state.links);
   const folders = useStore((state) => state.folders);

@@ -7,22 +7,21 @@
  */
 
 import * as React from "react";
-import { Menu, Plus } from "lucide-react";
+import { Menu } from "lucide-react";
 import { ConfirmModal } from "@/components/modals/confirm-modal";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { useStore } from "@/store/useStore";
 import { useFolderActions } from "@/hooks/use-folder-actions";
-import { QuickAccessNav, FolderItem } from "./shared-folder-nav";
+import { QuickAccessNav } from "./shared-folder-nav";
+import { FoldersSection } from "./folders-section";
 
 export function MobileSidebar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const links = useStore((state) => state.links);
-  const folders = useStore((state) => state.folders);
   const setSelectedFolder = useStore((state) => state.setSelectedFolder);
   const setCurrentView = useStore((state) => state.setCurrentView);
-  const setCreateFolderModalOpen = useStore((state) => state.setCreateFolderModalOpen);
   
   // Use shared folder actions hook
   const { 
@@ -91,33 +90,7 @@ export function MobileSidebar() {
               </div>
 
               {/* Folders */}
-              <div>
-                <div className="mb-2 flex items-center justify-between">
-                  <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    Folders
-                  </h4>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-7 w-7 hover:bg-primary/10"
-                    onClick={() => setCreateFolderModalOpen(true)}
-                    aria-label="Add folder"
-                  >
-                    <Plus className="h-4 w-4 text-primary" />
-                  </Button>
-                </div>
-                {folders.length > 0 && (
-                  <nav className="space-y-0.5">
-                    {folders.filter(f => f.parentId === null).map((folder) => (
-                      <FolderItem
-                        key={folder.id}
-                        folder={folder}
-                        onFolderClick={handleFolderClick}
-                      />
-                    ))}
-                  </nav>
-                )}
-              </div>
+              <FoldersSection onFolderClick={handleFolderClick} />
             </div>
           </ScrollArea>
         </SheetContent>

@@ -152,7 +152,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
     toast({
       title: "Copied",
       description: "URL",
-      variant: "default",
+      variant: "info",
       icon: <Copy className="h-4 w-4" />,
     });
   };
