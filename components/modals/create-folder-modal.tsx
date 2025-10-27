@@ -101,7 +101,7 @@ export function CreateFolderModal() {
         if (parent?.parentId !== null) {
           toast({
             title: "Cannot create sub-folder",
-            description: "Sub-folders only under parent folders",
+            description: "Under parent only",
             variant: "destructive",
             icon: <AlertCircle className="h-4 w-4" />,
           });
@@ -113,7 +113,7 @@ export function CreateFolderModal() {
           const count = getSubFolderCount(parentFolderId, folders);
           toast({
             title: "Maximum sub-folders reached",
-            description: `${count}/${MAX_SUB_FOLDERS_PER_FOLDER} limit reached`,
+            description: `Limit ${MAX_SUB_FOLDERS_PER_FOLDER}`,
             variant: "destructive",
             icon: <AlertCircle className="h-4 w-4" />,
           });
@@ -134,7 +134,7 @@ export function CreateFolderModal() {
 
         toast({
           title: "Updated",
-          description: "Folder saved",
+          description: "Saved",
           variant: "success",
           icon: <Folder className="h-4 w-4" />,
         });
@@ -151,7 +151,7 @@ export function CreateFolderModal() {
 
         toast({
           title: "Created",
-          description: isSubFolder ? "Sub-folder added" : "Folder added",
+          description: "Saved",
           variant: "success",
           icon: isSubFolder ? <FolderPlus className="h-4 w-4" /> : <Folder className="h-4 w-4" />,
         });
@@ -161,7 +161,7 @@ export function CreateFolderModal() {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Please try again",
+        description: "Try again",
         variant: "destructive",
         icon: <AlertCircle className="h-4 w-4" />,
       });

@@ -10,6 +10,7 @@ import * as React from "react";
 import { useState } from "react";
 import { Star, Trash2, MoreVertical, Edit, Trash, Plus, ChevronRight, ChevronDown, FolderPlus, Folder, X, Menu } from "lucide-react";
 import { FOLDER_ICONS } from "@/constants/folder-icons";
+import { ConfirmModal } from "@/components/modals/confirm-modal";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -41,7 +42,16 @@ export function MobileSidebar() {
   const toggleFolderExpanded = useStore((state) => state.toggleFolderExpanded);
   
   // Use shared folder actions hook
-  const { handleEditFolder, handleAddSubFolder, handleDeleteFolder, getFolderCount } = useFolderActions();
+  const { 
+    handleEditFolder, 
+    handleAddSubFolder, 
+    handleDeleteFolder, 
+    confirmDeleteFolder,
+    getFolderCount,
+    deleteConfirmOpen,
+    setDeleteConfirmOpen,
+    folderToDelete,
+  } = useFolderActions();
 
   // Calculate counts
   const allLinksCount = links.filter(link => link.deletedAt === null).length;
@@ -331,6 +341,23 @@ export function MobileSidebar() {
           </ScrollArea>
         </SheetContent>
       </Sheet>
+
+      {/* Folder Delete Confirmation Modal */}
+      <ConfirmModal
+        isOpen={deleteConfirmOpen}
+        onClose={() => setDeleteConfirmOpen(false)}
+        onConfirm={confirmDeleteFolder}
+        title="Delete folder?"
+        description={
+          folderToDelete
+            ? folderToDelete.linkCount > 0
+              ? `"${folderToDelete.name}" contains ${folderToDelete.linkCount} link${folderToDelete.linkCount > 1 ? 's' : ''}. Links will remain in "All Links".`
+              : `"${folderToDelete.name}" is empty and will be deleted.`
+            : ""
+        }
+        confirmText="Delete"
+        variant="destructive"
+      />
     </>
   );
 }

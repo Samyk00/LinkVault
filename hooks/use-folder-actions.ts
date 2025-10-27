@@ -6,6 +6,7 @@
  * @modified 2025-10-19
  */
 
+import { useState } from "react";
 import { useStore } from "@/store/useStore";
 import { useToast } from "@/hooks/use-toast";
 import { Folder } from "@/types";
@@ -32,6 +33,10 @@ export function useFolderActions() {
   const deleteFolder = useStore((state) => state.deleteFolder);
   const setSelectedFolder = useStore((state) => state.setSelectedFolder);
   const { toast } = useToast();
+
+  // State for delete confirmation modal
+  const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
+  const [folderToDelete, setFolderToDelete] = useState<{ id: string; name: string; linkCount: number } | null>(null);
 
   /**
    * Handles editing a folder
@@ -82,26 +87,32 @@ export function useFolderActions() {
     );
     const linkCount = linksInFolder.length;
     
-    let confirmMessage = `Delete folder "${folderName}"?`;
+    // Open custom confirmation modal
+    setFolderToDelete({ id: folderId, name: folderName, linkCount });
+    setDeleteConfirmOpen(true);
+  };
+
+  /**
+   * Confirms folder deletion
+   */
+  const confirmDeleteFolder = () => {
+    if (!folderToDelete) return;
+
+    deleteFolder(folderToDelete.id);
     
-    if (linkCount > 0) {
-      confirmMessage += `\n\nThis folder contains ${linkCount} link${linkCount > 1 ? 's' : ''}. The link${linkCount > 1 ? 's' : ''} will not be deleted and will remain in "All Links".`;
-    } else {
-      confirmMessage += '\n\nThis folder is empty.';
+    // Clear selection if the deleted folder was selected
+    if (selectedFolderId === folderToDelete.id) {
+      setSelectedFolder(null);
     }
     
-    const confirmed = window.confirm(confirmMessage);
-    if (confirmed) {
-      deleteFolder(folderId);
-      // Clear selection if the deleted folder was selected
-      if (selectedFolderId === folderId) {
-        setSelectedFolder(null);
-      }
-      toast({
-        title: "Folder deleted",
-        description: `"${folderName}" has been deleted.`,
-      });
-    }
+    toast({
+      title: "Deleted",
+      description: `(1)`,
+      variant: "destructive",
+    });
+
+    setDeleteConfirmOpen(false);
+    setFolderToDelete(null);
   };
 
   /**
@@ -121,6 +132,10 @@ export function useFolderActions() {
     handleEditFolder,
     handleAddSubFolder,
     handleDeleteFolder,
+    confirmDeleteFolder,
     getFolderCount,
+    deleteConfirmOpen,
+    setDeleteConfirmOpen,
+    folderToDelete,
   };
 }

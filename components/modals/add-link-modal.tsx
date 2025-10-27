@@ -168,7 +168,7 @@ export function AddLinkModal() {
 
         toast({
           title: "Updated",
-          description: "Link saved",
+          description: "Saved",
           variant: "success",
           icon: <Link2 className="h-4 w-4" />,
         });
@@ -186,7 +186,7 @@ export function AddLinkModal() {
 
         toast({
           title: "Added",
-          description: "Link saved",
+          description: "Saved",
           variant: "success",
           icon: <Link2 className="h-4 w-4" />,
         });
@@ -196,7 +196,7 @@ export function AddLinkModal() {
     } catch (error) {
       toast({
         title: "Error",
-        description: `Failed to ${isEditMode ? 'update' : 'add'} link. Please try again.`,
+        description: "Try again",
         variant: "destructive",
       });
     }

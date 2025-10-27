@@ -55,14 +55,14 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
 
       toast({
         title: "Exported",
-        description: "Data backup saved",
+        description: "Saved",
         variant: "success",
         icon: <Download className="h-4 w-4" />,
       });
     } catch (error) {
       toast({
         title: "Export failed",
-        description: "Please try again",
+        description: "Try again",
         variant: "destructive",
         icon: <Download className="h-4 w-4" />,
       });
@@ -82,7 +82,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
         if (success) {
           toast({
             title: "Imported",
-            description: "Data restored",
+            description: "Restored",
             variant: "success",
             icon: <Upload className="h-4 w-4" />,
           });
@@ -93,7 +93,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
       } catch (error) {
         toast({
           title: "Import failed",
-          description: "Invalid backup file",
+          description: "Invalid file",
           variant: "destructive",
           icon: <Upload className="h-4 w-4" />,
         });

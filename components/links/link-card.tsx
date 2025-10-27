@@ -98,7 +98,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
     updateLink(link.id, { isFavorite: !link.isFavorite });
     toast({
       title: wasFavorite ? "Unfavorited" : "Favorited",
-      description: "1 item",
+      description: "(1)",
       variant: "info",
       icon: <Star className={`h-4 w-4 ${!wasFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />,
     });
@@ -113,7 +113,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
     deleteLink(linkId);
     toast({
       title: "Deleted",
-      description: "1 item",
+      description: "(1)",
       variant: "destructive",
       icon: <Trash className="h-4 w-4" />,
       action: (
@@ -137,7 +137,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
     restoreLink(link.id);
     toast({
       title: "Restored",
-      description: "1 item",
+      description: "(1)",
       variant: "success",
       icon: <RotateCcw className="h-4 w-4" />,
     });
@@ -151,7 +151,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
     navigator.clipboard.writeText(link.url);
     toast({
       title: "Copied",
-      description: "URL copied",
+      description: "URL",
       variant: "default",
       icon: <Copy className="h-4 w-4" />,
     });
@@ -172,7 +172,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
     restoreLink(linkId);
     toast({
       title: "Restored",
-      description: "1 item",
+      description: "(1)",
       variant: "success",
       icon: <RotateCcw className="h-4 w-4" />,
     });
@@ -214,7 +214,7 @@ export function LinkCard({ link, isInTrash = false, isSelected = false, onToggle
     permanentlyDeleteLink(link.id);
     toast({
       title: "Deleted permanently",
-      description: "1 item",
+      description: "(1)",
       variant: "destructive",
       icon: <Trash className="h-4 w-4" />,
     });

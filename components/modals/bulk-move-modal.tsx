@@ -140,7 +140,7 @@ export function BulkMoveModal({
     } catch (error) {
       toast({
         title: "Error",
-        description: "Please try again",
+        description: "Try again",
         variant: "destructive",
         icon: <AlertCircle className="h-4 w-4" />,
       });

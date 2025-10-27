@@ -72,7 +72,7 @@ export function BulkActionBar({
 
     toast({
       title: shouldFavorite ? "Favorited" : "Unfavorited",
-      description: `${selectedIds.length} ${selectedIds.length === 1 ? 'item' : 'items'}`,
+      description: `(${selectedIds.length})`,
       variant: "info",
       icon: <Star className={`h-4 w-4 ${shouldFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />,
     });
@@ -102,7 +102,7 @@ export function BulkActionBar({
 
       toast({
         title: "Deleted",
-        description: `${deletedIds.length} ${deletedIds.length === 1 ? 'item' : 'items'}`,
+        description: `(${deletedIds.length})`,
         variant: "destructive",
         action: (
           <Button
@@ -121,7 +121,7 @@ export function BulkActionBar({
     } catch (error) {
       toast({
         title: "Error",
-        description: "Please try again",
+        description: "Try again",
         variant: "destructive",
         icon: <Trash2 className="h-4 w-4" />,
       });
@@ -143,7 +143,7 @@ export function BulkActionBar({
 
     toast({
       title: "Restored",
-      description: `${deletedIds.length} ${deletedIds.length === 1 ? 'item' : 'items'}`,
+      description: `(${deletedIds.length})`,
       variant: "success",
       icon: <Folder className="h-4 w-4" />,
     });
@@ -156,7 +156,7 @@ export function BulkActionBar({
     if (movedCount > 0) {
       toast({
         title: "Moved",
-        description: `${movedCount} ${movedCount === 1 ? 'item' : 'items'}`,
+        description: `(${movedCount})`,
         variant: "success",
         icon: <Folder className="h-4 w-4" />,
       });

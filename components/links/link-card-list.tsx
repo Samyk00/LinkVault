@@ -76,7 +76,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
     toggleFavorite(link.id);
     toast({
       title: wasFavorite ? "Unfavorited" : "Favorited",
-      description: "1 item",
+      description: "(1)",
       variant: "info",
       icon: <Star className={`h-4 w-4 ${!wasFavorite ? 'fill-yellow-400 text-yellow-400' : ''}`} />,
     });
@@ -86,7 +86,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
     navigator.clipboard.writeText(link.url);
     toast({
       title: "Copied",
-      description: "URL copied",
+      description: "URL",
       variant: "default",
       icon: <Copy className="h-4 w-4" />,
     });
@@ -102,7 +102,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
     deleteLink(linkId);
     toast({
       title: "Deleted",
-      description: "1 item",
+      description: "(1)",
       variant: "destructive",
       icon: <Trash2 className="h-4 w-4" />,
       action: (
@@ -122,7 +122,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
     restoreLink(link.id);
     toast({
       title: "Restored",
-      description: "1 item",
+      description: "(1)",
       variant: "success",
       icon: <RotateCcw className="h-4 w-4" />,
     });
@@ -139,7 +139,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
     permanentlyDeleteLink(link.id);
     toast({
       title: "Deleted permanently",
-      description: "1 item",
+      description: "(1)",
       variant: "destructive",
       icon: <XCircle className="h-4 w-4" />,
     });
@@ -152,7 +152,7 @@ export function LinkCardList({ link, isInTrash = false, isSelected = false, onTo
     restoreLink(linkId);
     toast({
       title: "Restored",
-      description: "1 item",
+      description: "(1)",
       variant: "success",
       icon: <RotateCcw className="h-4 w-4" />,
     });
