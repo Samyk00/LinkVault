@@ -10,6 +10,11 @@ import { LayoutGrid, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useStore } from "@/store/useStore";
 
+/**
+ * View toggle component for switching between grid and list layouts.
+ * Provides visual buttons for each view mode.
+ * @returns {JSX.Element} View toggle component
+ */
 export function ViewToggle() {
   const viewMode = useStore((state) => state.settings.viewMode);
   const updateSettings = useStore((state) => state.updateSettings);

@@ -97,6 +97,11 @@ export default function Home() {
 
   // Listen for select all event from bulk action bar
   useEffect(() => {
+    /**
+     * Handles the select all event triggered by BulkActionBar.
+     * Toggles selection state for all visible links in the current view.
+     * If all visible links are selected, deselects them; otherwise, selects all.
+     */
     const handleSelectAllEvent = () => {
       // Use the current filteredLinks from the closure
       const visibleLinkIds = filteredLinks.map(link => link.id);

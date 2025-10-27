@@ -21,6 +21,12 @@ interface BulkActionBarProps {
   totalVisibleItems: number;
 }
 
+/**
+ * Floating bulk action bar that appears when items are selected.
+ * Provides actions for moving, favoriting, and deleting multiple items.
+ * @param {BulkActionBarProps} props - Component props
+ * @returns {JSX.Element | null} Bulk action bar component or null if no selection
+ */
 export function BulkActionBar({
   selectedIds,
   onClearSelection,

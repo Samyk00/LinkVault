@@ -19,6 +19,12 @@ interface EmptyStateProps {
   };
 }
 
+/**
+ * Empty state component for displaying when no content is available.
+ * Shows an icon, title, description, and optional action button.
+ * @param {EmptyStateProps} props - Component props
+ * @returns {JSX.Element} Empty state component
+ */
 export function EmptyState({
   icon: Icon,
   title,
